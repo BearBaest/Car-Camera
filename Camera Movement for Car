@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CamMovement : MonoBehaviour
+{
+    public float Speed=10f;
+    public float distance = 3f;
+    public float height = 1f;
+    public Transform Car;
+    public Transform Cam;
+    void LateUpdate()
+    {
+        Cam.eulerAngles = Car.eulerAngles;
+
+        Vector3 Carpos = new Vector3(Car.transform.position.x ,1.1f, Car.transform.position.z);
+
+        transform.position = Carpos - Car.transform.forward * distance;
+    }
+}
